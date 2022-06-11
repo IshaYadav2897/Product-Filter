@@ -31,3 +31,22 @@ build/
 
 ### VS Code ###
 .vscode/
+
+target/*
+build/*
+out/
+.classpath
+.project
+.settings/
+*.jar
+/bin/
+.idea
+*.iml
+*.ipr
+*.iws
+*.log
+*pid.txt
+test/allure-results/*
+test/tmp/*
+.DS_Store
+test/src/main/resources/*
