@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.flipkart.exception.InvalidFilterCriteriaException;
 import com.flipkart.exception.ProductNotFoundException;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
@@ -29,7 +30,12 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(value = ProductNotFoundException.class)
 	@ResponseBody
 	public ResponseEntity<Object> handleInvalidProductEntity(ProductNotFoundException ex) {
-//		System.out.println("Exception : " + ex.getMessage());
+		return new ResponseEntity<Object>(ex.getMessage(), HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler(value = InvalidFilterCriteriaException.class)
+	@ResponseBody
+	public ResponseEntity<Object> handleInvalidFilterCriteria(InvalidFilterCriteriaException ex) {
 		return new ResponseEntity<Object>(ex.getMessage(), HttpStatus.NOT_FOUND);
 	}
 	

@@ -5,14 +5,14 @@ import java.util.List;
 public class FilterCriteria {
 	
 	private int rootCategoryId;
-	private int subCategoryId;
+//	private int subCategoryId;
 	private double minPrice;
 	private double maxPrice;
-	private String isfAssured;
-	private String isAvailabile;
+	private boolean fAssuredYN;
+	private boolean availabileYN;
 	private List<Integer> brands;
 	private List<Integer> offers;
-	private String isGstInvoiceAvailable;
+	private boolean gstInvoiceAvailableYN;
 	private Double minRating;
 	
 	public int getRootCategoryId() {
@@ -21,12 +21,12 @@ public class FilterCriteria {
 	public void setRootCategoryId(int rootCategoryId) {
 		this.rootCategoryId = rootCategoryId;
 	}
-	public int getSubCategoryId() {
-		return subCategoryId;
-	}
-	public void setSubCategoryId(int subCategoryId) {
-		this.subCategoryId = subCategoryId;
-	}
+//	public int getSubCategoryId() {
+//		return subCategoryId;
+//	}
+//	public void setSubCategoryId(int subCategoryId) {
+//		this.subCategoryId = subCategoryId;
+//	}
 	public double getMinPrice() {
 		return minPrice;
 	}
@@ -39,17 +39,17 @@ public class FilterCriteria {
 	public void setMaxPrice(double maxPrice) {
 		this.maxPrice = maxPrice;
 	}
-	public String getIsfAssured() {
-		return isfAssured;
+	public Boolean getfAssuredYN() {
+		return fAssuredYN;
 	}
-	public void setIsfAssured(String isfAssured) {
-		this.isfAssured = isfAssured;
+	public void setfAssuredYN(Boolean fAssuredYN) {
+		this.fAssuredYN = fAssuredYN;
 	}
-	public String getIsAvailabile() {
-		return isAvailabile;
+	public Boolean getAvailabileYN() {
+		return availabileYN;
 	}
-	public void setIsAvailabile(String isAvailabile) {
-		this.isAvailabile = isAvailabile;
+	public void setAvailabileYN(Boolean availabileYN) {
+		this.availabileYN = availabileYN;
 	}
 	public List<Integer> getBrands() {
 		return brands;
@@ -63,11 +63,11 @@ public class FilterCriteria {
 	public void setOffers(List<Integer> offers) {
 		this.offers = offers;
 	}
-	public String getIsGstInvoiceAvailable() {
-		return isGstInvoiceAvailable;
+	public Boolean getGstInvoiceAvailableYN() {
+		return gstInvoiceAvailableYN;
 	}
-	public void setIsGstInvoiceAvailable(String isGstInvoiceAvailable) {
-		this.isGstInvoiceAvailable = isGstInvoiceAvailable;
+	public void setGstInvoiceAvailableYN(Boolean gstInvoiceAvailableYN) {
+		this.gstInvoiceAvailableYN = gstInvoiceAvailableYN;
 	}
 	public Double getMinRating() {
 		return minRating;
@@ -75,5 +75,8 @@ public class FilterCriteria {
 	public void setMinRating(Double minRating) {
 		this.minRating = minRating;
 	}
+	
+	
+	
 	
 }

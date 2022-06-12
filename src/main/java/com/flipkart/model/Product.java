@@ -1,5 +1,6 @@
 package com.flipkart.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "product")
-public class Product {
+public class Product implements Serializable {
 	
 	@Id
 	@Column(name = "product_id")

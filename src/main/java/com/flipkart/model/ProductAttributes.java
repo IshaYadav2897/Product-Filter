@@ -1,5 +1,6 @@
 package com.flipkart.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,16 +17,20 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "product_attributes")
-public class ProductAttributes {
+public class ProductAttributes implements Serializable {
 	
 	@Id
 	@Column(name = "attribute_id")
 	private int attributeId;
 	
+	@OneToOne()
+	@JoinColumn(name = "productId", referencedColumnName = "product_id")
+	private Product product;
+	
 	@Column(name = "is_available")
 	private boolean avaiableYN;
 	
-	@Column(name = "gst_available")
+	@Column(name = "is_gst_available")
 	private boolean gstAvailableYN;
 	
 	@Column(name = "is_fassured")
@@ -37,9 +42,8 @@ public class ProductAttributes {
 	@Column(name = "status")
 	private String status;
 	
-	@OneToOne()
-	@JoinColumn(name = "productId", referencedColumnName = "product_id")
-	private Product product;
+	@Column(name = "image_path")
+	private String imagePath;
 	
 	@ManyToMany(fetch = FetchType.EAGER,
             cascade = {

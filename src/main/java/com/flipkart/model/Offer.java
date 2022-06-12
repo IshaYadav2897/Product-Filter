@@ -1,13 +1,20 @@
 package com.flipkart.model;
 
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "offer")
-public class Offer {
+public class Offer implements Serializable {
 	
 	@Id
 	@Column(name = "offer_id")
@@ -15,6 +22,14 @@ public class Offer {
 	
 	@Column(name = "offer_name")
 	private String offerName;
+	
+	@ManyToMany(mappedBy = "offers"
+			, fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE,
+                })
+	private Set<ProductAttributes> productAttributes = new HashSet<>();
 
 	public int getOfferId() {
 		return offerId;
