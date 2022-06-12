@@ -49,8 +49,4 @@ public class FilterController {
 		return filterService.getBrandsByCategoryId(categoryId);
 	}
 	
-//	@PostMapping(value = "/add")
-//	public void insertProducts() {
-//		filterRepo.addEmplyee();
-//	}
 }

@@ -20,10 +20,6 @@ public class JDBCFilterRepository {
 
 	private static final Logger logger = LoggerFactory.getLogger(JDBCFilterRepository.class);
 
-//	private static final String INSERT_PRODUCT_QUERY =
-//			"insert into product (product_id, product_name, price, brand_id) " 
-//			+ "	values ( :product_id, :product_name, :price, :brand_id) ";
-//	
 	private static final String GET_FILTERED_PRODUCTS_QUERY = 
 			"select distinct p.product_id, p.product_name, p.price, p.brand_id, b.brand_name " + 
 			"from product p " + 
@@ -82,19 +78,7 @@ public class JDBCFilterRepository {
 	
 	@Autowired
 	private NamedParameterJdbcTemplate namedJdbcTemplate;
-	
-//	public int addEmplyee() {
-//		
-//		final MapSqlParameterSource params = new MapSqlParameterSource();
-//		params.addValue("product_id", 14);
-//		params.addValue("product_name", "White Jeans");
-//		params.addValue("brand_id", "6");
-//		params.addValue("price", "2999");
-//
-//	    return namedJdbcTemplate.update(
-//	    		INSERT_PRODUCT_QUERY, params);
-//	}
-	
+		
 	public List<Product> getProducts(int rootCategoryId, String brands, double minPrice, double maxPrice,
 			boolean isAvailable, boolean isGstAvailable, boolean isFassured, String offers, double minRating) {
 				
