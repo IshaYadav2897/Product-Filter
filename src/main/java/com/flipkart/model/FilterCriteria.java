@@ -5,7 +5,6 @@ import java.util.List;
 public class FilterCriteria {
 	
 	private int rootCategoryId;
-//	private int subCategoryId;
 	private double minPrice;
 	private double maxPrice;
 	private boolean fAssuredYN;
@@ -21,12 +20,6 @@ public class FilterCriteria {
 	public void setRootCategoryId(int rootCategoryId) {
 		this.rootCategoryId = rootCategoryId;
 	}
-//	public int getSubCategoryId() {
-//		return subCategoryId;
-//	}
-//	public void setSubCategoryId(int subCategoryId) {
-//		this.subCategoryId = subCategoryId;
-//	}
 	public double getMinPrice() {
 		return minPrice;
 	}
@@ -75,8 +68,5 @@ public class FilterCriteria {
 	public void setMinRating(Double minRating) {
 		this.minRating = minRating;
 	}
-	
-	
-	
 	
 }

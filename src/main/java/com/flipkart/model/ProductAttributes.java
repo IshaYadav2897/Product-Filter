@@ -1,60 +1,25 @@
 package com.flipkart.model;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "product_attributes")
 public class ProductAttributes implements Serializable {
 	
-	@Id
-	@Column(name = "attribute_id")
 	private int attributeId;
 	
-	@OneToOne()
-	@JoinColumn(name = "productId", referencedColumnName = "product_id")
 	private Product product;
 	
-	@Column(name = "is_available")
 	private boolean avaiableYN;
 	
-	@Column(name = "is_gst_available")
 	private boolean gstAvailableYN;
 	
-	@Column(name = "is_fassured")
 	private boolean fAssuredYN;
 	
-	@Column(name = "customer_rating")
 	private double customerRating;
 	
-	@Column(name = "status")
 	private String status;
 	
-	@Column(name = "image_path")
 	private String imagePath;
 	
-	@ManyToMany(fetch = FetchType.EAGER,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-                })
-	@JoinTable(name = "product_attributes_offer", 
-			  joinColumns = @JoinColumn(name = "product_id"), 
-			  inverseJoinColumns = @JoinColumn(name = "offer_id"))
-	private Set<Offer> offers = new HashSet<>();
-
 	public int getAttributeId() {
 		return attributeId;
 	}
