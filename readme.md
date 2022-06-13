@@ -6,6 +6,10 @@
 * Spring Boot
 * MS SQL Server
 
+### Diagram:
+
+![classDiagram](classDiagram.png)
+
 ### REST APIS:
 
 * Filtered products (Fetch list of products based on provided filter criterias): (http://localhost:8080/api/v1/flipkart/products?rootCategoryId=1&minPrice=10000&maxPrice=90000&fAssuredYN=true&availabileYN=true&brands=1,2,3&offers=&gstInvoiceAvailableYN=true&minRating=3)
