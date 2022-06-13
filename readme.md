@@ -6,9 +6,13 @@
 * Spring Boot
 * MS SQL Server
 
-### Diagram:
+### Class Diagram:
 
 ![classDiagram](classDiagram.png)
+
+### Database Diagram:
+
+![databaseDiagram](databaseDiagram.png)
 
 ### REST APIS:
 
