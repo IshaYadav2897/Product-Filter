@@ -29,7 +29,7 @@ public class JDBCFilterRepository {
 			"	on p.product_id = pca.product_id " + 
 			"join category c " + 
 			"	on pca.category_id = c.category_id " + 
-			"left join product_attributes pa " + 
+			"join product_attributes pa " + 
 			"	on p.product_id = pa.product_id " + 
 			"left join product_attributes_offer pao " + 
 			"	on pa.product_id = pao.product_id " + 
@@ -66,12 +66,12 @@ public class JDBCFilterRepository {
 	
 	private static final String GET_BRANDS_QUERY = 
 			"select distinct b.brand_id, b.brand_name " + 
-			"from product p\r\n" + 
-			"join brand b\r\n" + 
-			"	on p.brand_id = b.brand_id\r\n" + 
-			"join product_category pca\r\n" + 
-			"	on p.product_id = pca.product_id\r\n" + 
-			"join category c\r\n" + 
+			"from product p " + 
+			"join brand b " + 
+			"	on p.brand_id = b.brand_id " + 
+			"join product_category pca " + 
+			"	on p.product_id = pca.product_id " + 
+			"join category c " + 
 			"	on pca.category_id = c.category_id " + 
 			"where c.category_id = :category_id ";
 	
